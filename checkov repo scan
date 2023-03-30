@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    // Declare Pipeline Environment Variables
+        // Declaring temp access keys for testing purposes only - deleted after pipeline execution. 
+    environment {
+        PRISMA_API_URL="x"
+        PRISMA_ACCESS_KEY="x"
+        PRISMA_SECRET_KEY="x"
+        GITHUB_REPO_URL="https://github.com/real786/terragoat.git"
+    }
+
+    
+    stages {
+
+
+    //Stage 2 - Checkout the GitHub repository defined by the specified environment variable
+        stage ('Code Repositories Checkout') {
+        steps {
+ 	        checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: env.GITHUB_REPO_URL]]])
+        }
+        } 
+
+//Stage 3 - Use the Checkov to scan the checked out code repository with checks provided in checkov.yaml file. 
+
+        stage('Checkov IAC Scan') {
+            steps {
+                script { 
+                    sh """
+                    pipenv install
+                    pipenv run pip install bridgecrew
+                    pipenv run bridgecrew --prisma-api-url ${PRISMA_API_URL} -d . --bc-api-key ${PRISMA_ACCESS_KEY}::${PRISMA_SECRET_KEY} --repo-id real786/terragoat -s
+                """
+                }
+            }
+        }
+    }
+    options {
+        preserveStashes()
+        timestamps()
+    }
+}
