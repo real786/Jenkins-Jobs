@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+        environment {
+        TL_CONSOLE="x"
+        TL_USER="x"
+        TL_PASS="x"
+        IMAGE="kennethreitz/pipenv"
+    }
+stages {
+
+stage('Check twistcli version') {
+  steps {
+    script{
+            sh '''
+            python3 -m venv local
+            source ./local/bin/activate
+            '''
+            
+  def TCLI_VERSION = sh(script: "./twistcli | grep -A1 VERSION | sed 1d", returnStdout:true).trim()
+  def CONSOLE_VERSION = sh(script: "curl -k -u \"$TL_USER:$TL_PASS\" $TL_CONSOLE/api/v1/version | tr -d \'\"'", returnStdout:true).trim()
+
+  println "TCLI_VERSION = $TCLI_VERSION"
+  println "CONSOLE_VERSION = $CONSOLE_VERSION"
+
+  if ("$TCLI_VERSION" != "$CONSOLE_VERSION") {
+    println "downloading twistcli"
+    sh 'curl -k -u $TL_USER:$TL_PASS --output ./twistcli $TL_CONSOLE/api/v1/util/twistcli'
+    sh 'sudo chmod a+x ./twistcli'
+  }
+    }
+}
+}
+
+stage('Scan with Twistcli') {
+  steps{
+    script{
+  sh './twistcli images scan --address $TL_CONSOLE -u $TL_USER -p $TL_PASS --details $IMAGE'
+          }
+        }
+      }
+}
+}
