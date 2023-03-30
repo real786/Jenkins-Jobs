@@ -1,0 +1,144 @@
+Amazon ECR
+This plugin generates Docker authentication token from Amazon Credentials to access Amazon ECR.
+
+Amazon Web Services SDK :: EC2
+EC2 module for the AWS SDK for Java.
+
+Amazon Web Services SDK :: ECR
+ECR module for the AWS SDK for Java.
+
+Amazon Web Services SDK :: Minimal
+Minimal modules for the AWS SDK for Java.
+
+CloudBees AWS Credentials Plugin
+Allows storing Amazon IAM credentials within the Jenkins Credentials API. Store Amazon IAM access keys (AWSAccessKeyId and AWSSecretKey) within the Jenkins Credentials API. Also support IAM Roles and IAM MFA Token.
+
+CloudBees Docker Build and Publish plugin
+This plugin enables building Dockerfile based projects, as well as publishing of the built images/repos to the docker registry.
+
+Credentials
+This plugin allows you to store credentials in Jenkins.
+
+Credentials Binding Plugin
+Allows credentials to be bound to environment variables for use from miscellaneous build steps.
+
+Docker API
+This plugin provides docker-java API for other plugins.
+
+Docker Commons
+Provides the common shared functionality for various Docker-related plugins.
+
+Docker Pipeline
+Build and use Docker containers from pipelines.
+
+Git client
+Utility plugin for Git support in Jenkins
+
+Git plugin
+This plugin integrates Git with Jenkins.
+
+GitHub
+This plugin integrates GitHub to Jenkins.
+
+GitHub API
+This plugin provides GitHub API for other plugins
+
+GitHub Branch Source
+Multibranch projects and organization folders from GitHub. Maintained by CloudBees, Inc.
+
+Gradle
+This plugin allows Jenkins to invoke Gradle build scripts directly.
+
+Pipeline
+A suite of plugins that lets you orchestrate automation, simple or complex. See Pipeline as Code with Jenkins for more details.
+
+Pipeline Graph Analysis
+Provides a REST API to access pipeline and pipeline run data.
+
+Pipeline: API
+Plugin that defines Pipeline API.
+
+Pipeline: Basic Steps
+Commonly used steps for Pipelines.
+
+Pipeline: Build Step
+Adds the Pipeline step build to trigger builds of other jobs.
+
+Pipeline: Declarative
+An opinionated, declarative Pipeline.
+
+Pipeline: Declarative Extension Points API
+APIs for extension points used in Declarative Pipelines.
+
+Pipeline: GitHub Groovy Libraries
+Allows Pipeline Groovy libraries to be loaded on the fly from GitHub.
+
+Pipeline: Groovy
+Pipeline execution engine based on continuation passing style transformation of Groovy scripts.
+
+Pipeline: Groovy Libraries
+Libraries for Pipeline scripts allowing logic to be shared across jobs.
+
+Pipeline: Input Step
+Adds the Pipeline step input to wait for human input or approval.
+
+Pipeline: Job
+Defines a new job type for pipelines and provides their generic user interface.
+
+Pipeline: Milestone Step
+Plugin that provides the milestone step
+
+Pipeline: Model API
+Model API for Declarative Pipeline.
+
+Pipeline: Multibranch
+Enhances Pipeline plugin to handle branches better by automatically grouping builds from different branches.
+
+Pipeline: Nodes and Processes
+Pipeline steps locking agents and workspaces, and running external processes that may survive a Jenkins restart or agent reconnection.
+
+Pipeline: REST API
+Provides a REST API to access pipeline and pipeline run data.
+
+Pipeline: SCM Step
+Adds a Pipeline step to check out or update working sources from various SCMs (version control).
+
+Pipeline: Stage Step
+Adds the Pipeline step stage to delineate portions of a build.
+
+Pipeline: Stage Tags Metadata
+Library plugin for Pipeline stage tag metadata.
+
+Pipeline: Stage View
+Pipeline Stage View Plugin.
+
+Pipeline: Step API
+API for asynchronous build step primitive.
+
+Pipeline: Supporting APIs
+Common utility implementations to build Pipeline Plugin
+
+Plain Credentials
+Allows use of plain strings and files as credentials.
+
+Prisma Cloud Plugin
+This plugin integrates with Prisma Cloud to scan created Docker images and serverless functions for CIS compliance and vulnerabilities assessment
+
+SCM API Plugin
+This plugin provides a new enhanced API for interacting with SCM systems.
+
+SSH Build Agents
+Allows to launch agents over SSH, using a Java implementation of the SSH protocol.
+
+SSH Credentials Plugin
+Allows storage of SSH credentials in Jenkins
+
+SSH server
+Adds SSH server functionality to Jenkins, exposing CLI commands through it.n
+
+Terraform Plugin
+This plugin provides a build wrapper for Terraform to launch and destroy infrastructure.
+
+Timestamper
+Adds timestamps to the Console Output
+
